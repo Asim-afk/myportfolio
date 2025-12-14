@@ -1,16 +1,106 @@
 ---
+import "../styles/global.css";
 
+const siteTitle = "Asim Chaulagain - Web Developer | React, Node.js";
+const siteDescription =
+  "Web developer specializing in React, Node.js, JavaScript, and Electron.js. View my portfolio and projects.";
+const siteUrl = "https://www.asim-chaulagain.com.np";
+const imageUrl = `${siteUrl}/og-image.webp`;
 ---
 
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <!-- Primary Meta Tags -->
+    <title>{siteTitle}</title>
+    <meta name="title" content={siteTitle} />
+    <meta name="description" content={siteDescription} />
+    <meta
+      name="keywords"
+      content="web developer, react, node.js, javascript, electron js, portfolio, asim chaulagain"
+    />
+    <meta name="author" content="Asim Chaulagain" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={siteTitle} />
+    <meta property="og:description" content={siteDescription} />
+    <meta property="og:image" content={imageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:site_name" content="Asim Chaulagain" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={siteUrl} />
+    <meta property="twitter:title" content={siteTitle} />
+    <meta property="twitter:description" content={siteDescription} />
+    <meta property="twitter:image" content={imageUrl} />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href={siteUrl} />
+
+    <!-- Schema.org JSON-LD -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Person",
+        name: "Asim Chaulagain",
+        jobTitle: "Web Developer",
+        url: siteUrl,
+        knowsAbout: [
+          "React",
+          "Node.js",
+          "JavaScript",
+          "Electron.js",
+          "Web Development",
+        ],
+        description: siteDescription,
+      })}
+    />
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+  </head>
+
+  <body
+    class="bg-black text-white min-h-screen flex items-center justify-center p-6"
+  >
+    <main class="max-w-xl w-full text-center">
+      <h1 class="text-3xl font-light mb-8">
+        Asim Chaulagain, <br /> Web Developer specializing in React & Node.js
+      </h1>
+
+      <p class="text-gray-400 leading-relaxed mb-8">
+        Building modern web applications with React, Node.js, JavaScript, and
+        Electron.js. Focused on clean code, performance, and thoughtful design.
+      </p>
+
+      <div class="mb-8">
+        <a
+          href="/AsimChaulagain_CV.pdf"
+          download
+          class="inline-block px-6 py-2 border border-white text-white hover:bg-white hover:text-black transition-colors text-sm"
+          aria-label="Download Asim Chaulagain's CV as PDF"
+        >
+          Download CV
+        </a>
+      </div>
+
+      <footer class="text-gray-500 text-sm">
+        © {new Date().getFullYear()} Asim Chaulagain
+      </footer>
+    </main>
+  </body>
 </html>
