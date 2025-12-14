@@ -16,6 +16,7 @@ export default defineConfig({
   integrations: [
     sitemap({
       xslURL: "/sitemap-style.xsl",
+      lastmod: new Date(),
     }),
   ],
 });
